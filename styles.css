@@ -1,0 +1,68 @@
+/*
+    Styling the Carousel
+
+    1) Set a max-width of 600px & position relative on the div 'carousel'
+    2) Hide all 'carousel-item' divs
+    3) Make sure all images inside 'carousel-item' have a max-width that matches the main 
+    'carousel' div
+    4) All images within 'carousel-item' must be responsive, so think about setting a 
+    max-width on the images and how you'd make the image 100% width of 'carousel-item' 
+    5) We want the first 'carousel-item' to be visible, think about the class we added 
+    to the first item. Make sure that class is always shown
+    6) The 'carousel-actions' needs to be on top of the slider, so think about positioning 
+    and how you can use relative/absolute positioning to put the 'carousel-actions' on top of 
+    the slider
+    7) Make some beautiful buttons!
+    8) Space those buttons from the left & right - we want to make sure they're not touching 
+    the edges of the slides, but adequately spaced
+*/
+body{
+    margin: 0;
+}
+#carousel{
+    position: relative;  
+    max-width: 600px;
+}
+.carousel-item-hidden,
+.carousel-item{
+    display: none;
+}
+.carousel-item-visible{
+    display: block;
+    animation: fadeVisibility;
+    animation-duration: .5s;
+}
+.carousel-item img{
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+}
+#carousel-button-prev,
+#carousel-button-next{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    font-size: 24px;
+    padding: 5px 13px;
+    opacity: 70%;
+    border: none;
+    cursor: pointer;
+}
+#carousel-button-next{
+    right: 30px;   
+    text-shadow: 3px 1px 5px blueviolet;
+}
+#carousel-button-prev{
+    text-shadow: -3px 1px 5px blueviolet;
+    left: 30px;   
+}
+
+@keyframes fadeVisibility {
+    from {
+        opacity: 50%;
+    }
+    to{
+        opacity: 100%;
+    }
+}
